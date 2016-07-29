@@ -1,9 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  body: MyText
+ruby:
+  body: rubyrubyrails
   link_id: 1
   user_id: 1
+  link: code
 
 two:
   body: MyText

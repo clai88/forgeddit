@@ -1,4 +1,4 @@
 class Link < ActiveRecord::Base
   belongs_to :user
-  has_many :commentsss
+  has_many :comments
 end
