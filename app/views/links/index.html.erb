@@ -1,0 +1,30 @@
+<h1>These are all the links</h1>
+
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+        Post Title
+      </th>
+      <th>
+        Link
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @links.each do |link| %>
+    <tr>
+      <td>
+        <%= link.title %>
+      </td>
+      <td>
+        <a href="www.<%= link.url %>">  <%= link.url %></a>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href="/links/new"><img src="https://www.regonline.com/custImages/420000/422113/submit-button.png"style="width:144px;height:64" alt="" /></a>

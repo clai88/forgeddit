@@ -1,0 +1,12 @@
+<h1>This is where you create a new link</h1>
+
+
+<%= form_for @new_link do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :url %>
+<%= f.text_field :url %>
+
+<%= f.submit "submit link" %>
+<% end %>
