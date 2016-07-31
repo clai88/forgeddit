@@ -1,0 +1,17 @@
+<h1>You are now viewing the comments for <%= @current_post.title %></h1>
+
+<% @comments.each do |cmnt| %>
+<p>
+  object: <%= cmnt %>
+</p>
+<p>
+  body: <%= cmnt.body %>
+</p>
+<p>
+  link id: <%= cmnt.link_id %>
+</p>
+<% end %>
+
+
+<%= link_to "create new comment", "/links/#{@current_post.title}/new" %> <br>
+<%= link_to "go back to all links", links_path %>

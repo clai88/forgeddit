@@ -13,5 +13,10 @@ class UsersController < ApplicationController
       render :new
     end
   end
-
 end
+
+
+# unless current_user
+#   redirect_to login_path
+#   return
+# end

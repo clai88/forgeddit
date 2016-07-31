@@ -1,15 +1,13 @@
 <h1>These are all the links</h1>
 
-
-
 <table class="table table-striped">
   <thead>
     <tr>
       <th>
-        Post Title
+        Post
       </th>
       <th>
-        Link
+        Comments
       </th>
       <th>
         Submitted by
@@ -20,14 +18,14 @@
     <% @links.each do |link| %>
     <tr>
       <td>
-        <%= link.title %>
+      <a href="<%= link.url %>">  <%= link.title %></a>
       </td>
       <td>
-        <a href="<%= link.url %>">  <%= link.url %></a>
+        <a href="/links/<%= link.title %>/comments">  <%= link.title %> comments</a>
       </td>
     </tr>
     <% end %>
   </tbody>
 </table>
 
-<a href="/links/new"><img src="https://www.regonline.com/custImages/420000/422113/submit-button.png"style="width:144px;height:64" alt="" /></a>
+<%= link_to "Submit new link", new_link_path %>

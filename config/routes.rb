@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
   resources :links
 
+  get '/links/:title/comments' => "comments#index", as: :comments
+  post '/links/:title/comments' => "comments#create"
+
+  get '/links/:title/new' => "comments#new", as: :new_comment
+
   resources :users, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
