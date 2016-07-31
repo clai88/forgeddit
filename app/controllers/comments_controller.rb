@@ -6,10 +6,15 @@ class CommentsController < ApplicationController
   end
 
   def new
+    # unless current_user
+    #   redirect_to "/"
+    #   return
+    # end
     @new_comment = Comment.new
   end
 
   def create
+
     @current_link = Link.find_by(title: params["title"])
 
     @current_comment = Comment.create(body: params["comment"]["body"])

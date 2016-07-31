@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.sign_up(params["user"]["email"])
-    @user.update(name: params["user"]["full_name"])
+    @user.update(name: params["user"]["name"])
 
     if @user.valid?
       redirect_to(links_path)
@@ -14,9 +14,3 @@ class UsersController < ApplicationController
     end
   end
 end
-
-
-# unless current_user
-#   redirect_to login_path
-#   return
-# end

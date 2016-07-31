@@ -4,6 +4,9 @@
   <thead>
     <tr>
       <th>
+        Vote Count
+      </th>
+      <th>
         Post
       </th>
       <th>
@@ -18,7 +21,10 @@
     <% @links.each do |link| %>
     <tr>
       <td>
-      <a href="<%= link.url %>">  <%= link.title %></a>
+        <%# @links.vote_count %>
+      </td>
+      <td>
+        <a href="<%= link.url %>">  <%= link.title %></a>
       </td>
       <td>
         <a href="/links/<%= link.title %>/comments">  <%= link.title %> comments</a>

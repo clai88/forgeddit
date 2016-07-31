@@ -1,12 +1,12 @@
 <h1>Welcome to the login page</h1>
 
 
-<%= form_for @user, url: users_path, method: :post do |f|%>
+<%= form_for @user, url: users_path do |f|%>
 
-<% @user.errors.full_messages.each do |msg| %>
-<p>
+  <% @user.errors.full_messages.each do |msg| %>
+  <p>
   <%= msg %>
-</p>
+  </p>
 
 <% end %>
 

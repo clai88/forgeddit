@@ -13,6 +13,7 @@
 
     <%= current_user.email %> is currently logged in.  Not you?
     <%= link_to "Log out", login_path, method: :delete %>
+
     <% else %>
 
     <%= link_to "Sign_up", new_user_path %>
@@ -21,12 +22,13 @@
     <% end %>
 
     <%= yield %>
-    <!-- <pre>
+    <pre>
       <code>
         Current User ID
         <%= session[:user_id] %>
+        <%# current_user.inspect %>
       </code>
-    </pre> -->
+    </pre>
 
   </main>
 </body>

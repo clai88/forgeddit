@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      redirect_to links_path
+      redirect_to "/login"
     else
       redirect_to  login_path
     end
@@ -16,7 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-
     redirect_to "/login"
   end
 end
