@@ -1,6 +1,6 @@
 <h1>new comment page</h1>
 
-<%= form_for @new_comment do |f|  %>
+<%= form_for @new_comment, url: comments_path do |f|  %>
 <%= f.label :body %>
 <%= f.text_field :body %>
 

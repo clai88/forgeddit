@@ -9,9 +9,9 @@
 </head>
 <body>
   <main>
-    <% if session[:user_id] %>
+    <% if current_user %>
 
-    <%= current_user %> is currently logged in.  Not you?
+    <%= current_user.email %> is currently logged in.  Not you?
     <%= link_to "Log out", login_path, method: :delete %>
     <% else %>
 

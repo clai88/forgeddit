@@ -11,10 +11,15 @@ class CommentsController < ApplicationController
 
   def create
     @current_link = Link.find_by(title: params["title"])
-    @current_comment = Comment.create
-    @curren_comment.create(body: params["body"])
+
+    @current_comment = Comment.create(body: params["comment"]["body"])
     @current_comment.update(link_id: @current_link.id)
 
     redirect_to "/links/#{@current_link.title}/comments"
   end
+
+  private def comment_params
+    params.require("comment").permit(:body, :link_id)
+  end
+
 end
