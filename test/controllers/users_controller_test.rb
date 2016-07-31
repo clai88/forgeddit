@@ -5,28 +5,21 @@ class UsersControllerTest < ActionController::TestCase
     assert true
   end
 
-  test "can sign up user" do
-    count = User.count
-    User.sign_up("g@gmail.com")
-
-    assert_equal count+1, User.count
+  test "should get new" do
+    get :new
+    assert_response :success
   end
 
-  test "can't sign up without valid emails" do
-    count = User.count
-    new_user = User.sign_up("poo")
-
-    assert_equal count,User.count
-    refute new_user.valid?
+  test "create new user" do
+    assert_difference "User.count", 1 do
+      post :create, {user: {email: "example1@example.com"}}
+    end
   end
 
-  test "emails r uniq" do
+  test "only valid emails added" do
     count = User.count
-    new_user = User.sign_up("martin@martin.com")
-    new_user = User.sign_up("martin@martin.com")
+    User.sign_up("poo")
 
-    assert_equal count+1,User.count
+    assert_equal count, User.count
   end
-
-
 end
