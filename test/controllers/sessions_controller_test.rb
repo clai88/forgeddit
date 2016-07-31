@@ -6,4 +6,8 @@ class SessionsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "login works" do
+    post :create {user: {email: "clai88@gmail.com"}}
+  end
+
 end

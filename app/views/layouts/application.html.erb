@@ -8,9 +8,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "sign_up", new_user_path %>
+  <main>
+    <% if session[:user_id] %>
 
-<%= yield %>
+    <%= current_user %> is currently logged in.  Not you?
+    <%= link_to "Log out", login_path, method: :delete %>
+    <% else %>
 
+    <%= link_to "Sign_up", new_user_path %>
+    <%= link_to "Login", login_path %>
+
+    <% end %>
+
+    <%= yield %>
+    <!-- <pre>
+      <code>
+        Current User ID
+        <%= session[:user_id] %>
+      </code>
+    </pre> -->
+
+  </main>
 </body>
 </html>
