@@ -9,6 +9,7 @@
 </head>
 <body>
   <main>
+    <%# binding.pry %>
     <% if current_user %>
 
     <%= current_user.email %> is currently logged in.  Not you?
@@ -24,9 +25,8 @@
     <%= yield %>
     <pre>
       <code>
-        Current User ID
-        <%= session[:user_id] %>
-        <%# current_user.inspect %>
+        Current User ID = <%= session[:user_id] %>
+        <%= current_user.inspect %>
       </code>
     </pre>
 

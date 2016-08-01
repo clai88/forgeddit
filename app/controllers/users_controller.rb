@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user.update(name: params["user"]["name"])
 
     if @user.valid?
-      redirect_to(links_path)
+      redirect_to (links_path)
     else
       render :new
     end

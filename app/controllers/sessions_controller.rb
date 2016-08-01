@@ -8,9 +8,10 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
+      binding.pry
       redirect_to "/login"
     else
-      redirect_to  login_path
+      redirect_to login_path
     end
   end
 

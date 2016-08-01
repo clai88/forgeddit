@@ -8,12 +8,12 @@ class SessionsControllerTest < ActionController::TestCase
 
   test "login works" do
 
-    # post :create {user: {email: "clai88@gmail.com"}}
-    #
-    # refute_equal nil, session[:user_id]
+    post :create, {user: {email: "clai88@gmail.com"}}
+
+    refute_equal nil, session[:user_id]
   end
 
-  test "sing out works" do
+  test "sign out works" do
     assert_not_nil session[:user_id]
     delete :destroy
 
